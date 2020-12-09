@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>花舞邮箱</title>
+    <!-- <script>
+      // var windowWidth = window.innerWidth;
+      // //   console.log(windowWidth + 100);
+      // if (windowWidth > 768) {
+      //   window.location.href = "./html/pcIndex.html";
+      // }
+    </script> -->
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/common.css" />
+    <link rel="stylesheet" href="./css/mobileIndex.css" />
+  </head>
+  <body>
+    <div id="page">
+      <!-- logo -->
+      <div id="logo"></div>
+      <!-- input -->
+      <form id="login" action="">
+        <input
+          id="mail"
+          type="email"
+          placeholder="邮箱"
+          autofocus="autofocus"
+          autocomplete="off"
+        />
+        <ul class="hint"></ul>
+        <input id="password" type="password" placeholder="请输入你的密码" />
+        <div class="remember">
+          <input id="remember-loginState" type="checkbox" /><span
+            class="form-remember"
+            >记住登陆状态</span
+          >
+        </div>
+        <input id="submit" type="submit" value="登录" />
+      </form>
+      <button id="onekeyLogin">一键登录</button>
+      <div class="bottomLinks">
+        <a id="forget-password" href="#">忘了密码?</a>
+        <a id="signUp" href="#">注册新账号</a>
+      </div>
+    </div>
+    <script src="./js/index.js"></script>
+    <script>
+      var logo = document.querySelector("#logo");
+      logo.addEventListener("click", function () {
+        window.location.reload();
+      });
+
+      //   var mail = document.querySelector("#mail");
+      //   mail.value = "122";
+    </script>
+  </body>
+</html>

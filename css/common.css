@@ -1,0 +1,17 @@
+/* 不妥，因为js的网址没换，直接变会很突兀 */
+/* @media screen and (min-width: 768px) {
+  body {
+    background-color: #000;
+  }
+  div {
+    background-color: #000;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    background-color: #eee;
+  }
+} ; */
+#page {
+  margin: 0 auto;
+}

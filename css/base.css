@@ -1,0 +1,60 @@
+/* JD的css初始化，针对不同的浏览给的不同默认属性*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+em,
+i {
+  font-style: normal;
+}
+li {
+  list-style: none;
+}
+img {
+  border: 0;
+  /* 取消图片底侧有空白缝隙的问题。 */
+  vertical-align: middle;
+}
+button {
+  cursor: pointer;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+a:hover {
+  color: #c81623;
+}
+button,
+input {
+  border: 0 solid transparent;
+  outline: none;
+  font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB,
+    "\5B8B\4F53", sans-serif;
+}
+body {
+  /* 文字放大后 抗锯齿性  */
+  -webkit-font-smoothing: antialiased;
+  /* background-color: #fff; */
+  height: 100vh;
+  font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB,
+    "\5B8B\4F53", sans-serif;
+  color: #666;
+}
+.hide,
+.none {
+  display: none;
+}
+/* 清除浮动 */
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: "";
+  height: 0;
+}
+.clearfix {
+  *zoom: 1;
+}
