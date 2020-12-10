@@ -1,4 +1,5 @@
 var postfixList = ["163.com", "gmail.com", "126.com", "qq.com", "263.net"];
+var login = document.querySelector("#login");
 var inputs = {
   mailBox: document.querySelector("#mail"),
   password: document.querySelector("#password"),
@@ -11,11 +12,19 @@ var activeIndex = 0;
 // 2 当输入时，实时读取输入内容，并生成对应的lis，并渲染
 // 3 当按下上下键时，切换 选择类名 并刷新内容
 inputs.mailBox.addEventListener("input", function () {
+  activeIndex = 0;
   creatLis(this.value, postfixList);
   lis = document.querySelectorAll("#login .hint li");
   bindClick();
-  bindKeypress();
 });
+bindKeypress();
+
+login.onsubmit = function () {
+  console.log(inputs.mailBox.value + " " + inputs.password.value);
+  if (inputs.mailBox.value == "" || inputs.password.value == "") {
+    return false;
+  }
+};
 
 function creatLis(content, arr) {
   ulList.innerHTML = "";
@@ -70,8 +79,8 @@ function bindClick() {
 }
 
 function bindKeypress() {
-  document.addEventListener("keydown", function (event) {
-    console.log(event.keyCode);
+  inputs.mailBox.addEventListener("keydown", function (event) {
+    // console.log(event.keyCode);
     var e = event || window.event || arguments.callee.caller.arguments[0];
     if (e && e.keyCode == 37) {
       //左
@@ -104,6 +113,13 @@ function bindKeypress() {
         activeIndex += 1;
         lis[activeIndex].className = "lis-select";
       }
+    }
+    if (e && e.keyCode == 13) {
+      // 确认
+      // console.log(lis);
+      this.value = lis[activeIndex].innerHTML;
+      ulList.innerHTML = "";
+      inputs.password.focus();
     }
   });
 }
